@@ -6,6 +6,8 @@ ENV NODE_VERSION 6.10.0
 RUN adduser -D -u 1000 node \
     && apk add --no-cache \
         libstdc++ \
+        netcat-openbsd \
+        mysql-client \
     && apk add --no-cache --virtual .build-deps \
         binutils-gold \
         curl \
@@ -17,8 +19,6 @@ RUN adduser -D -u 1000 node \
         make \
         python \
         xz \
-        netcat-openbsd \
-        mysql-client \
   && for key in \
     9554F04D7259F04124DE6B476D5A82AC7E37093B \
     94AE36675C464D64BAFA68DD7434390BDBE9B9C5 \
