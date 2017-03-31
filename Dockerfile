@@ -8,6 +8,7 @@ RUN adduser -D -u 1000 node \
         libstdc++ \
         netcat-openbsd \
         mysql-client \
+        git \
     && apk add --no-cache --virtual .build-deps \
         binutils-gold \
         curl \
