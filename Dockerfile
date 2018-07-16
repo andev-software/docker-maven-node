@@ -1,7 +1,7 @@
 FROM maven:3.3.9-jdk-8-alpine
 
 ENV NPM_CONFIG_LOGLEVEL info
-ENV NODE_VERSION 6.10.0
+ENV NODE_VERSION 10.4.1
 
 RUN adduser -D -u 1000 node \
     && apk add --no-cache \
@@ -48,7 +48,7 @@ RUN adduser -D -u 1000 node \
     && rm -Rf "node-v$NODE_VERSION" \
     && rm "node-v$NODE_VERSION.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt
 
-ENV YARN_VERSION 0.21.3
+ENV YARN_VERSION 1.7.0
 
 RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg \
   && for key in \
